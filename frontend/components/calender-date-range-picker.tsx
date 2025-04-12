@@ -3,7 +3,11 @@
 import * as React from "react"
 import { CalendarIcon } from "lucide-react"
 import { addDays, format } from "date-fns"
-import type { DateRange } from "react-day-picker"
+
+type DateRange = {
+  from: Date | undefined
+  to: Date | undefined
+}
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -45,7 +49,6 @@ export function CalendarDateRangePicker({ className }: React.HTMLAttributes<HTML
             mode="range"
             defaultMonth={date?.from}
             selected={date}
-            onSelect={setDate}
             numberOfMonths={2}
           />
         </PopoverContent>

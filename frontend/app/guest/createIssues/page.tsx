@@ -58,7 +58,7 @@ export default function NewInspectionPage() {
       })
 
       setFormData({ roomNumber: "", issueDetails: "", files: [] })
-      router.push("/inspections")
+      router.push("/guest")
     }, 1500)
   }
 

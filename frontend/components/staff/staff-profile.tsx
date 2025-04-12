@@ -8,7 +8,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Progress } from "@/components/ui/progress"
 import { StaffHeader } from "@/components/staff/staff-header"
 import { Award, Calendar, CheckCircle2, Clock, FileText, Star, ThumbsUp, TrendingUp, Users } from "lucide-react"
-import { ChartContainer, ChartTooltip, ChartLegend, ChartTitle } from "@/components/ui/chart"
+import { ChartContainer, ChartTooltip, ChartLegend, ChartTitle } from "@/components/staff/staff-chart"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Line, Tooltip } from "recharts"
 
 // Mock data for performance metrics

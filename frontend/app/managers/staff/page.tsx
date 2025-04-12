@@ -1,8 +1,8 @@
 import Link from "next/link"
-import { Button } from "../../components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card"
-import { Input } from "../../components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Button } from "../../../components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card"
+import { Input } from "../../../components/ui/input"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs"
 import { ArrowRight, Home, Plus, Search, Users } from "lucide-react"
 
 export default function StaffPage() {
@@ -299,6 +299,7 @@ export default function StaffPage() {
           </TabsContent>
 
           <TabsContent value="housekeeping" className="space-y-4 mt-6">
+            <button>Click s</button>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card>
                 <CardHeader className="pb-2">

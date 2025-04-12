@@ -389,10 +389,13 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
           <Card>
+            <div className="flex justify-between items-center p-4">
             <CardHeader>
               <CardTitle>Staff Performance</CardTitle>
               <CardDescription>Top performing staff members</CardDescription>
             </CardHeader>
+            <Link href={"/managers/staff-analytics"}><button className="mb-12 border-1 bg-blue-200 rounded-xl p-2">analytics</button></Link>
+            </div>
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center">
