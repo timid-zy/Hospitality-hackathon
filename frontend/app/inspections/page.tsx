@@ -54,6 +54,7 @@ export default function InspectionsPage() {
             <TabsTrigger value="pending">Pending</TabsTrigger>
             <TabsTrigger value="in-progress">In Progress</TabsTrigger>
             <TabsTrigger value="completed">Completed</TabsTrigger>
+            <TabsTrigger value="my-tasks">My Tasks</TabsTrigger>
           </TabsList>
           <TabsContent value="all" className="space-y-4 mt-6">
             <Card>
@@ -251,6 +252,57 @@ export default function InspectionsPage() {
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: Housekeeping</div>
                 <Link href="/inspections/3">
+                  <Button variant="ghost" size="sm">
+                    View Details
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+          <TabsContent value="my-tasks" className="space-y-4 mt-6">
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle>Room 205 - Plumbing Inspection</CardTitle>
+                <CardDescription>Created on April 10, 2025</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2 text-sm text-yellow-600 mb-2">
+                  <Clock className="h-4 w-4" />
+                  <span>Pending</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Guest reported leaking faucet in bathroom. Requires plumbing inspection and repair.
+                </p>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <div className="text-sm text-muted-foreground">Priority: High</div>
+                <Link href="/inspections/1">
+                  <Button variant="ghost" size="sm">
+                    View Details
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+
+            <Card>
+              <CardHeader className="pb-2">
+                <CardTitle>Room 412 - HVAC Inspection</CardTitle>
+                <CardDescription>Created on April 8, 2025</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-2 text-sm text-blue-600 mb-2">
+                  <Clock className="h-4 w-4" />
+                  <span>In Progress</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  AC not cooling properly. Maintenance team checking refrigerant levels and filters.
+                </p>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <div className="text-sm text-muted-foreground">Priority: Medium</div>
+                <Link href="/inspections/4">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
