@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Button } from "../components/ui/button"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card"
 import { ArrowRight, CheckCircle, ClipboardList, Settings } from "lucide-react"
 import heroBackground from "./assets/hero_background.jpg"
