@@ -8,7 +8,7 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col">
       <header className="border-b">
         <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-lg font-semibold">Kuriftu Resort Management</h1>
+          <h1 className="text-lg font-semibold">Resourius</h1>
           <nav className="ml-auto flex gap-4 sm:gap-6">
             <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
               Dashboard

@@ -20,8 +20,8 @@ export default function InspectionsPage() {
           <Link href="/" className="flex items-center gap-2">
             <img src={image.src} alt="Kuriftu Logo" className="h-8 w-8 rounded-full" />
             {/* <Home className="h-8 w-8 text-primary" /> */}
-            {/* <span className="text-lg font-semibold">Kuriftu Resort Management</span> */}
-            <span className="text-lg font-semibold">Kuriftu Resort Management</span>
+            {/* <span className="text-lg font-semibold">Resourius</span> */}
+            <span className="text-lg font-semibold">Resourius</span>
           </Link>
           <nav className="ml-auto flex gap-4 sm:gap-6">
             <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">

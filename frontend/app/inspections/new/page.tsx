@@ -68,7 +68,7 @@ export default function NewInspectionPage() {
         <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <Home className="h-5 w-5" />
-            <span className="text-lg font-semibold">Kuriftu Resort Management</span>
+            <span className="text-lg font-semibold">Resourius</span>
           </Link>
           <nav className="ml-auto flex gap-4 sm:gap-6">
             <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
