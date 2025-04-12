@@ -42,7 +42,7 @@ export default function InspectionsPage() {
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Inspections</h1>
-          <Link href="">
+          <Link href="/inspections/new">
             <Button>
               <Plus className="mr-2 h-4 w-4" /> New Inspection
             </Button>
@@ -70,7 +70,7 @@ export default function InspectionsPage() {
                 .filter((inspection) => tab === "all" || inspection.status.toLowerCase() === tab)
                 .reverse()
                 .map((inspection) => (
-                  <Card key={inspection.id}>
+                  <Card key={inspection.id} className="border-b-2 cursor-pointer border-blue-500 ">
                     <CardHeader className="pb-2">
                       <CardTitle>{`${inspection.room} - ${inspection.title}`}</CardTitle>
                       <CardDescription>Created on {inspection.createdOn}</CardDescription>
