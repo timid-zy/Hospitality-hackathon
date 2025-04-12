@@ -104,42 +104,6 @@ export default function ChecklistDetailPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-b">
-        <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-2">
-            <Home className="h-5 w-5" />
-            <span className="text-lg font-semibold">
-              Resourius
-            </span>
-          </Link>
-          <nav className="ml-auto flex gap-4 sm:gap-6">
-            <Link
-              href="/"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Home
-            </Link>
-            <Link
-              href="/dashboard"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/inspections"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Inspections
-            </Link>
-            <Link
-              href="/checklists"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Checklists
-            </Link>
-          </nav>
-        </div>
-      </header>
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center gap-4 mb-6">
           <Link href="/checklists">
@@ -178,11 +142,10 @@ export default function ChecklistDetailPage() {
                           />
                           <Label
                             htmlFor={`item-${item.id}`}
-                            className={`text-sm ${
-                              checkedItems[item.id]
+                            className={`text-sm ${checkedItems[item.id]
                                 ? "line-through text-muted-foreground"
                                 : ""
-                            }`}
+                              }`}
                           >
                             {item.text}
                           </Label>
