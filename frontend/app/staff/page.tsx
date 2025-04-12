@@ -3,7 +3,8 @@ import { Button } from "../../components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card"
 import { Input } from "../../components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
-import { ArrowRight, Home, Plus, Search, Users } from "lucide-react"
+import { ArrowRight, Search, Users } from "lucide-react"
+import AddStaffMemberDialog from "@/components/AddStaffMemberDialog"
 
 export default function StaffPage() {
   return (
@@ -11,11 +12,7 @@ export default function StaffPage() {
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Staff Management</h1>
-          <Link href="/staff/new">
-            <Button>
-              <Plus className="mr-2 h-4 w-4" /> Add Staff Member
-            </Button>
-          </Link>
+          <AddStaffMemberDialog />
         </div>
 
         <div className="flex items-center gap-4 mb-6">
