@@ -92,7 +92,7 @@ export default function StaffDetailPage() {
           <Link href="/" className="flex items-center gap-2">
             <Home className="h-5 w-5" />
             <span className="text-lg font-semibold">
-              Kuriftu Resort Management
+              Resourius
             </span>
           </Link>
           <nav className="ml-auto flex gap-4 sm:gap-6">

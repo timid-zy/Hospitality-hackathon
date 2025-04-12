@@ -2,13 +2,13 @@ import Link from "next/link"
 import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../components/ui/card"
 import { ArrowRight, CheckCircle, ClipboardList, Settings } from "lucide-react"
-
+import heroBackground from "./assets/hero_background.jpg"
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="border-b">
         <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-lg font-semibold">Kuriftu Resort Management</h1>
+          <h1 className="text-lg font-semibold">Resourius</h1>
           <nav className="ml-auto flex gap-4 sm:gap-6">
             <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
               Dashboard
@@ -26,27 +26,34 @@ export default function HomePage() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section
+          className="w-full py-12 md:py-24 lg:py-32 bg-muted"
+          style={{
+            backgroundImage: `url(${heroBackground.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Digitized Resort Inspection & Management
-                </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
-                  Simplify and standardize inspections across Kuriftu's resorts with our digital tool.
-                </p>
+          <h1 className="text-3xl font-bold text-white tracking-tighter sm:text-4xl md:text-5xl">
+            Digitized Resort Inspection & Management
+          </h1>
+          <p className="mx-auto text-white max-w-[700px] text-gray-500 md:text-xl">
+            Simplify and standardize inspections across Kuriftu's resorts with our digital tool.
+          </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/inspections/new">
-                  <Button>
-                    Start New Inspection
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/">
-                  <Button variant="outline">View Dashboard</Button>
-                </Link>
+          <Link href="/inspections/new">
+            <Button className="bg-blue-800 text-white">
+              Start New Inspection
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+          <Link href="/dashboard">
+            <Button variant="outline">View Dashboard</Button>
+          </Link>
               </div>
             </div>
           </div>

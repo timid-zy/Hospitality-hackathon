@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import { useRouter } from "next/navigation" // Import useRouter
 import Link from "next/link"
 import { Button } from "../../../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../../components/ui/card"
@@ -11,8 +11,16 @@ import { Label } from "../../../components/ui/label"
 import { Textarea } from "../../../components/ui/textarea"
 import { Home, Upload } from "lucide-react"
 import { toast } from "sonner"
+import { useInspections } from "../../../context/InspectionsContext"
+
+// Mock inspections array (shared state for simplicity)
+const mockInspections = [
+  // Existing mock inspections...
+]
 
 export default function NewInspectionPage() {
+  const { addInspection } = useInspections()
+  const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     roomNumber: "",
@@ -33,19 +41,24 @@ export default function NewInspectionPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate API call with a timeout
     setTimeout(() => {
       setIsSubmitting(false)
-      toast(
-        "Issue reported successfully. Our team will review your issue and assign it to the appropriate department."
-      )
 
-      // Reset form
-      setFormData({
-        roomNumber: "",
-        issueDetails: "",
-        files: [],
+      addInspection({
+        id: Date.now(),
+        room: `Room ${formData.roomNumber}`,
+        title: "New Inspection",
+        description: formData.issueDetails,
+        createdOn: new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }),
+        status: "Pending",
+        assignedTo: "Maintenance",
+        statusColor: "text-yellow-600",
+        icon: require("lucide-react").Clock,
+        image: formData.files[0] ? URL.createObjectURL(formData.files[0]) : null,
       })
+
+      setFormData({ roomNumber: "", issueDetails: "", files: [] })
+      router.push("/inspections")
     }, 1500)
   }
 
@@ -55,7 +68,7 @@ export default function NewInspectionPage() {
         <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <Home className="h-5 w-5" />
-            <span className="text-lg font-semibold">Kuriftu Resort Management</span>
+            <span className="text-lg font-semibold">Resourius</span>
           </Link>
           <nav className="ml-auto flex gap-4 sm:gap-6">
             <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
@@ -105,9 +118,6 @@ export default function NewInspectionPage() {
                   onChange={(e) => setFormData({ ...formData, issueDetails: e.target.value })}
                   required
                 />
-                <p className="text-xs text-muted-foreground">
-                  Our AI system will analyze your description to assign your issue to the appropriate department.
-                </p>
               </div>
 
               <div className="space-y-2">
