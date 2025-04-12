@@ -28,16 +28,12 @@ import {
   User,
 } from "lucide-react";
 
-export default function StaffDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function StaffDetailPage() {
   const [timeRange, setTimeRange] = useState("30d");
 
   // Mock data - in a real app, this would come from an API
   const staff = {
-    id: params.id,
+    id: 1,
     name: "Ahmed Kemal",
     department: "Maintenance",
     email: "ahmed.kemal@kuriftu.com",
