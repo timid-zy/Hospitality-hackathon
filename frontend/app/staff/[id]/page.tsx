@@ -1,18 +1,39 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "../../../components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs"
-import { ArrowLeft, Calendar, Home, Mail, Phone, Star, PenToolIcon as Tool, User } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "../../../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../../components/ui/card";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../components/ui/tabs";
+import {
+  ArrowLeft,
+  Calendar,
+  Home,
+  Mail,
+  Phone,
+  Star,
+  PenToolIcon as Tool,
+  User,
+} from "lucide-react";
 
-export default function StaffDetailPage({ params }: { params: { id: string } }) {
-  const [timeRange, setTimeRange] = useState("30d")
+export default function StaffDetailPage() {
+  const [timeRange, setTimeRange] = useState("30d");
 
   // Mock data - in a real app, this would come from an API
   const staff = {
-    id: params.id,
+    id: 1,
     name: "Ahmed Kemal",
     department: "Maintenance",
     email: "ahmed.kemal@kuriftu.com",
@@ -25,8 +46,20 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
       completedOnTime: "92%",
     },
     recentIssues: [
-      { id: "1", title: "Leaking faucet in Room 205", status: "Completed", date: "April 10, 2025", time: "0.5 days" },
-      { id: "2", title: "Broken AC in Room 412", status: "In Progress", date: "April 8, 2025", time: "2 days" },
+      {
+        id: "1",
+        title: "Leaking faucet in Room 205",
+        status: "Completed",
+        date: "April 10, 2025",
+        time: "0.5 days",
+      },
+      {
+        id: "2",
+        title: "Broken AC in Room 412",
+        status: "In Progress",
+        date: "April 8, 2025",
+        time: "2 days",
+      },
       {
         id: "3",
         title: "Light fixture replacement in Room 118",
@@ -34,7 +67,13 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
         date: "April 5, 2025",
         time: "0.7 days",
       },
-      { id: "4", title: "Toilet clog in Room 302", status: "Completed", date: "April 3, 2025", time: "0.3 days" },
+      {
+        id: "4",
+        title: "Toilet clog in Room 302",
+        status: "Completed",
+        date: "April 3, 2025",
+        time: "0.3 days",
+      },
       {
         id: "5",
         title: "Door lock malfunction in Room 127",
@@ -44,7 +83,7 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
       },
     ],
     skills: ["Plumbing", "Electrical", "HVAC", "Carpentry", "Basic Repairs"],
-  }
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -52,19 +91,33 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
         <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <Home className="h-5 w-5" />
-            <span className="text-lg font-semibold">Kuriftu Resort Management</span>
+            <span className="text-lg font-semibold">
+              Kuriftu Resort Management
+            </span>
           </Link>
           <nav className="ml-auto flex gap-4 sm:gap-6">
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Home
             </Link>
-            <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/dashboard"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Dashboard
             </Link>
-            <Link href="/inspections" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/inspections"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Inspections
             </Link>
-            <Link href="/checklists" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/checklists"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Checklists
             </Link>
           </nav>
@@ -117,7 +170,10 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                   <div className="text-sm font-medium">Skills</div>
                   <div className="flex flex-wrap gap-2">
                     {staff.skills.map((skill, index) => (
-                      <div key={index} className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs text-primary">
+                      <div
+                        key={index}
+                        className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs text-primary"
+                      >
                         {skill}
                       </div>
                     ))}
@@ -141,29 +197,49 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star
                         key={star}
-                        className={`h-6 w-6 ${star <= Math.floor(staff.performance.rating) ? "fill-primary text-primary" : "text-muted-foreground"}`}
+                        className={`h-6 w-6 ${
+                          star <= Math.floor(staff.performance.rating)
+                            ? "fill-primary text-primary"
+                            : "text-muted-foreground"
+                        }`}
                       />
                     ))}
                   </div>
                 </div>
-                <div className="text-center text-sm text-muted-foreground">{staff.performance.rating} out of 5</div>
+                <div className="text-center text-sm text-muted-foreground">
+                  {staff.performance.rating} out of 5
+                </div>
 
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="space-y-1">
-                    <div className="text-2xl font-bold">{staff.performance.issuesResolved}</div>
-                    <div className="text-xs text-muted-foreground">Issues Resolved</div>
+                    <div className="text-2xl font-bold">
+                      {staff.performance.issuesResolved}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Issues Resolved
+                    </div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-2xl font-bold">{staff.performance.avgResolutionTime} days</div>
-                    <div className="text-xs text-muted-foreground">Avg. Resolution Time</div>
+                    <div className="text-2xl font-bold">
+                      {staff.performance.avgResolutionTime} days
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Avg. Resolution Time
+                    </div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-2xl font-bold">{staff.performance.completedOnTime}</div>
-                    <div className="text-xs text-muted-foreground">Completed On Time</div>
+                    <div className="text-2xl font-bold">
+                      {staff.performance.completedOnTime}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Completed On Time
+                    </div>
                   </div>
                   <div className="space-y-1">
                     <div className="text-2xl font-bold">Top 10%</div>
-                    <div className="text-xs text-muted-foreground">Department Ranking</div>
+                    <div className="text-xs text-muted-foreground">
+                      Department Ranking
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -193,7 +269,9 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                     >
                       <div>
                         <div className="font-medium">{issue.title}</div>
-                        <div className="text-sm text-muted-foreground">Reported on {issue.date}</div>
+                        <div className="text-sm text-muted-foreground">
+                          Reported on {issue.date}
+                        </div>
                       </div>
                       <div className="flex items-center gap-2">
                         <div
@@ -201,13 +279,15 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                             issue.status === "Completed"
                               ? "bg-green-100 text-green-800"
                               : issue.status === "In Progress"
-                                ? "bg-yellow-100 text-yellow-800"
-                                : "bg-gray-100 text-gray-800"
+                              ? "bg-yellow-100 text-yellow-800"
+                              : "bg-gray-100 text-gray-800"
                           }`}
                         >
                           {issue.status}
                         </div>
-                        <div className="text-xs text-muted-foreground">{issue.time}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {issue.time}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -223,15 +303,27 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
             <Card>
               <CardHeader>
                 <CardTitle>Performance Trends</CardTitle>
-                <CardDescription>Issue resolution time over the past 30 days</CardDescription>
+                <CardDescription>
+                  Issue resolution time over the past 30 days
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="h-[200px] flex items-end gap-2">
                   {/* Mock chart bars */}
-                  {[0.9, 1.2, 0.7, 0.5, 0.8, 1.0, 0.6, 0.4, 0.7, 0.9, 0.5, 0.3].map((value, index) => (
-                    <div key={index} className="flex-1 flex flex-col items-center gap-1">
-                      <div className="w-full bg-primary rounded-t" style={{ height: `${(value / 1.5) * 100}%` }} />
-                      <div className="text-xs text-muted-foreground">{index + 1}</div>
+                  {[
+                    0.9, 1.2, 0.7, 0.5, 0.8, 1.0, 0.6, 0.4, 0.7, 0.9, 0.5, 0.3,
+                  ].map((value, index) => (
+                    <div
+                      key={index}
+                      className="flex-1 flex flex-col items-center gap-1"
+                    >
+                      <div
+                        className="w-full bg-primary rounded-t"
+                        style={{ height: `${(value / 1.5) * 100}%` }}
+                      />
+                      <div className="text-xs text-muted-foreground">
+                        {index + 1}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -241,18 +333,26 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
             <Card className="mb-6">
               <CardHeader>
                 <CardTitle>Resource Management</CardTitle>
-                <CardDescription>Tools and supplies needed for pending tasks</CardDescription>
+                <CardDescription>
+                  Tools and supplies needed for pending tasks
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="h-8 w-8 rounded-full bg-red-100 flex items-center justify-center">
-                        <span className="text-xs font-medium text-red-600">!</span>
+                        <span className="text-xs font-medium text-red-600">
+                          !
+                        </span>
                       </div>
                       <div>
-                        <div className="font-medium">HVAC Refrigerant (R-410A)</div>
-                        <div className="text-sm text-muted-foreground">Required for Room 412 AC repair</div>
+                        <div className="font-medium">
+                          HVAC Refrigerant (R-410A)
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          Required for Room 412 AC repair
+                        </div>
                       </div>
                     </div>
                     <Button variant="outline" size="sm">
@@ -262,11 +362,15 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center">
-                        <span className="text-xs font-medium text-amber-600">!</span>
+                        <span className="text-xs font-medium text-amber-600">
+                          !
+                        </span>
                       </div>
                       <div>
                         <div className="font-medium">Pipe Wrench Set</div>
-                        <div className="text-sm text-muted-foreground">Currently in use by another team</div>
+                        <div className="text-sm text-muted-foreground">
+                          Currently in use by another team
+                        </div>
                       </div>
                     </div>
                     <Button variant="outline" size="sm">
@@ -276,11 +380,15 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
-                        <span className="text-xs font-medium text-green-600">✓</span>
+                        <span className="text-xs font-medium text-green-600">
+                          ✓
+                        </span>
                       </div>
                       <div>
                         <div className="font-medium">Plumbing Repair Kit</div>
-                        <div className="text-sm text-muted-foreground">Available in maintenance storage</div>
+                        <div className="text-sm text-muted-foreground">
+                          Available in maintenance storage
+                        </div>
                       </div>
                     </div>
                     <Button variant="outline" size="sm">
@@ -302,27 +410,39 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                   <div className="flex items-center justify-between p-4">
                     <div>
                       <div className="font-medium">Broken AC in Room 412</div>
-                      <div className="text-sm text-muted-foreground">Assigned on April 8, 2025</div>
+                      <div className="text-sm text-muted-foreground">
+                        Assigned on April 8, 2025
+                      </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">In Progress</div>
+                      <div className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
+                        In Progress
+                      </div>
                       <Button variant="outline" size="sm">
                         Update
                       </Button>
                     </div>
                   </div>
                 </div>
-                <div className="text-center text-sm text-muted-foreground py-8">No other tasks currently assigned</div>
+                <div className="text-center text-sm text-muted-foreground py-8">
+                  No other tasks currently assigned
+                </div>
               </TabsContent>
               <TabsContent value="completed" className="space-y-4 mt-4">
                 <div className="rounded-md border">
                   <div className="flex items-center justify-between p-4">
                     <div>
-                      <div className="font-medium">Leaking faucet in Room 205</div>
-                      <div className="text-sm text-muted-foreground">Completed on April 10, 2025</div>
+                      <div className="font-medium">
+                        Leaking faucet in Room 205
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Completed on April 10, 2025
+                      </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Completed</div>
+                      <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                        Completed
+                      </div>
                       <Button variant="outline" size="sm">
                         Details
                       </Button>
@@ -332,11 +452,17 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                 <div className="rounded-md border">
                   <div className="flex items-center justify-between p-4">
                     <div>
-                      <div className="font-medium">Light fixture replacement in Room 118</div>
-                      <div className="text-sm text-muted-foreground">Completed on April 5, 2025</div>
+                      <div className="font-medium">
+                        Light fixture replacement in Room 118
+                      </div>
+                      <div className="text-sm text-muted-foreground">
+                        Completed on April 5, 2025
+                      </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Completed</div>
+                      <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                        Completed
+                      </div>
                       <Button variant="outline" size="sm">
                         Details
                       </Button>
@@ -347,10 +473,14 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                   <div className="flex items-center justify-between p-4">
                     <div>
                       <div className="font-medium">Toilet clog in Room 302</div>
-                      <div className="text-sm text-muted-foreground">Completed on April 3, 2025</div>
+                      <div className="text-sm text-muted-foreground">
+                        Completed on April 3, 2025
+                      </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Completed</div>
+                      <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                        Completed
+                      </div>
                       <Button variant="outline" size="sm">
                         Details
                       </Button>
@@ -365,17 +495,26 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
-                          className={`h-4 w-4 ${star <= 5 ? "fill-primary text-primary" : "text-muted-foreground"}`}
+                          className={`h-4 w-4 ${
+                            star <= 5
+                              ? "fill-primary text-primary"
+                              : "text-muted-foreground"
+                          }`}
                         />
                       ))}
                     </div>
-                    <div className="text-sm font-medium">Room 205 - Leaking faucet</div>
+                    <div className="text-sm font-medium">
+                      Room 205 - Leaking faucet
+                    </div>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    "Ahmed was very professional and fixed the issue quickly. He explained what caused the problem and
-                    gave tips to prevent it in the future."
+                    "Ahmed was very professional and fixed the issue quickly. He
+                    explained what caused the problem and gave tips to prevent
+                    it in the future."
                   </p>
-                  <div className="text-xs text-muted-foreground mt-2">April 10, 2025</div>
+                  <div className="text-xs text-muted-foreground mt-2">
+                    April 10, 2025
+                  </div>
                 </div>
                 <div className="rounded-md border p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -383,17 +522,25 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
-                          className={`h-4 w-4 ${star <= 4 ? "fill-primary text-primary" : "text-muted-foreground"}`}
+                          className={`h-4 w-4 ${
+                            star <= 4
+                              ? "fill-primary text-primary"
+                              : "text-muted-foreground"
+                          }`}
                         />
                       ))}
                     </div>
-                    <div className="text-sm font-medium">Room 118 - Light fixture replacement</div>
+                    <div className="text-sm font-medium">
+                      Room 118 - Light fixture replacement
+                    </div>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    "Good service, fixed the light quickly. Would have been perfect if he had cleaned up a bit better
-                    afterward."
+                    "Good service, fixed the light quickly. Would have been
+                    perfect if he had cleaned up a bit better afterward."
                   </p>
-                  <div className="text-xs text-muted-foreground mt-2">April 5, 2025</div>
+                  <div className="text-xs text-muted-foreground mt-2">
+                    April 5, 2025
+                  </div>
                 </div>
                 <div className="rounded-md border p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -401,16 +548,25 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
-                          className={`h-4 w-4 ${star <= 5 ? "fill-primary text-primary" : "text-muted-foreground"}`}
+                          className={`h-4 w-4 ${
+                            star <= 5
+                              ? "fill-primary text-primary"
+                              : "text-muted-foreground"
+                          }`}
                         />
                       ))}
                     </div>
-                    <div className="text-sm font-medium">Room 302 - Toilet clog</div>
+                    <div className="text-sm font-medium">
+                      Room 302 - Toilet clog
+                    </div>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    "Ahmed responded very quickly and resolved the issue immediately. Very satisfied with the service."
+                    "Ahmed responded very quickly and resolved the issue
+                    immediately. Very satisfied with the service."
                   </p>
-                  <div className="text-xs text-muted-foreground mt-2">April 3, 2025</div>
+                  <div className="text-xs text-muted-foreground mt-2">
+                    April 3, 2025
+                  </div>
                 </div>
               </TabsContent>
             </Tabs>
@@ -418,5 +574,5 @@ export default function StaffDetailPage({ params }: { params: { id: string } }) 
         </div>
       </main>
     </div>
-  )
+  );
 }
