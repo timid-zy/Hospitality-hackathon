@@ -10,10 +10,9 @@ import { Input } from "../../../components/ui/input"
 import { Label } from "../../../components/ui/label"
 import { Textarea } from "../../../components/ui/textarea"
 import { Home, Upload } from "lucide-react"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 
 export default function NewInspectionPage() {
-  const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     roomNumber: "",
@@ -37,10 +36,9 @@ export default function NewInspectionPage() {
     // Simulate API call with a timeout
     setTimeout(() => {
       setIsSubmitting(false)
-      toast({
-        title: "Issue reported successfully",
-        description: "Our team will review your issue and assign it to the appropriate department.",
-      })
+      toast(
+        "Issue reported successfully. Our team will review your issue and assign it to the appropriate department."
+      )
 
       // Reset form
       setFormData({
