@@ -299,6 +299,7 @@ export default function StaffPage() {
           </TabsContent>
 
           <TabsContent value="housekeeping" className="space-y-4 mt-6">
+            <button>Click s</button>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Card>
                 <CardHeader className="pb-2">
