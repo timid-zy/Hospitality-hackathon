@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Button } from "../../../components/ui/button";
+import { Button } from "../../../../components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,10 +10,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../../components/ui/card";
-import { Checkbox } from "../../../components/ui/checkbox";
-import { Label } from "../../../components/ui/label";
-import { Separator } from "../../../components/ui/separator";
+} from "../../../../components/ui/card";
+import { Checkbox } from "../../../../components/ui/checkbox";
+import { Label } from "../../../../components/ui/label";
+import { Separator } from "../../../../components/ui/separator";
 import { ArrowLeft, Home, Printer, Share } from "lucide-react";
 
 export default function ChecklistDetailPage() {

@@ -1,12 +1,12 @@
 "use client" // Mark this as a client component
 
 import Link from "next/link"
-import { Button } from "../../components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card"
-import { Input } from "../../components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs"
+import { Button } from "../../../components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card"
+import { Input } from "../../../components/ui/input"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs"
 import { ArrowRight, Home, Plus, Search } from "lucide-react"
-import { useInspections } from "../../context/InspectionsContext"
+import { useInspections } from "../../../context/InspectionsContext"
 import React from "react"
 import image from '../assets/kuriftu.jpg'
 
