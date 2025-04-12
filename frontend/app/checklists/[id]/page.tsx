@@ -1,16 +1,27 @@
-"use client"
+// "use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "../../../components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card"
-import { Checkbox } from "../../../components/ui/checkbox"
-import { Label } from "../../../components/ui/label"
-import { Separator } from "../../../components/ui/separator"
-import { ArrowLeft, Home, Printer, Share } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "../../../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../../components/ui/card";
+import { Checkbox } from "../../../components/ui/checkbox";
+import { Label } from "../../../components/ui/label";
+import { Separator } from "../../../components/ui/separator";
+import { ArrowLeft, Home, Printer, Share } from "lucide-react";
 
-export default function ChecklistDetailPage({ params }: { params: { id: string } }) {
-  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({})
+export default function ChecklistDetailPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
   // Mock data - in a real app, this would come from an API
   const checklist = {
@@ -20,44 +31,80 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
     description:
       "Standard checklist for daily room inspections including bed making, bathroom cleaning, and amenity restocking.",
     items: [
-      { id: "1", text: "Bed made properly with clean linens", category: "Bedroom" },
-      { id: "2", text: "Pillows fluffed and properly arranged", category: "Bedroom" },
+      {
+        id: "1",
+        text: "Bed made properly with clean linens",
+        category: "Bedroom",
+      },
+      {
+        id: "2",
+        text: "Pillows fluffed and properly arranged",
+        category: "Bedroom",
+      },
       { id: "3", text: "Floors vacuumed/swept", category: "General" },
       { id: "4", text: "Surfaces dusted", category: "General" },
-      { id: "5", text: "Bathroom sink, toilet, and shower cleaned", category: "Bathroom" },
-      { id: "6", text: "Fresh towels placed in bathroom", category: "Bathroom" },
-      { id: "7", text: "Bathroom amenities restocked (soap, shampoo, etc.)", category: "Bathroom" },
+      {
+        id: "5",
+        text: "Bathroom sink, toilet, and shower cleaned",
+        category: "Bathroom",
+      },
+      {
+        id: "6",
+        text: "Fresh towels placed in bathroom",
+        category: "Bathroom",
+      },
+      {
+        id: "7",
+        text: "Bathroom amenities restocked (soap, shampoo, etc.)",
+        category: "Bathroom",
+      },
       { id: "8", text: "Trash bins emptied", category: "General" },
       { id: "9", text: "Windows and mirrors cleaned", category: "General" },
-      { id: "10", text: "TV and remote control working", category: "Electronics" },
-      { id: "11", text: "Air conditioning/heating functioning properly", category: "Climate" },
+      {
+        id: "10",
+        text: "TV and remote control working",
+        category: "Electronics",
+      },
+      {
+        id: "11",
+        text: "Air conditioning/heating functioning properly",
+        category: "Climate",
+      },
       { id: "12", text: "Lights and lamps working", category: "Electronics" },
       { id: "13", text: "Minibar restocked", category: "Amenities" },
-      { id: "14", text: "Coffee/tea supplies replenished", category: "Amenities" },
-      { id: "15", text: "Room inspected for damages or maintenance issues", category: "Inspection" },
+      {
+        id: "14",
+        text: "Coffee/tea supplies replenished",
+        category: "Amenities",
+      },
+      {
+        id: "15",
+        text: "Room inspected for damages or maintenance issues",
+        category: "Inspection",
+      },
     ],
-  }
+  };
 
   const toggleItem = (id: string) => {
     setCheckedItems((prev) => ({
       ...prev,
       [id]: !prev[id],
-    }))
-  }
+    }));
+  };
 
   const getProgress = () => {
-    const checkedCount = Object.values(checkedItems).filter(Boolean).length
-    return Math.round((checkedCount / checklist.items.length) * 100)
-  }
+    const checkedCount = Object.values(checkedItems).filter(Boolean).length;
+    return Math.round((checkedCount / checklist.items.length) * 100);
+  };
 
   // Group items by category
-  const itemsByCategory: Record<string, typeof checklist.items> = {}
+  const itemsByCategory: Record<string, typeof checklist.items> = {};
   checklist.items.forEach((item) => {
     if (!itemsByCategory[item.category]) {
-      itemsByCategory[item.category] = []
+      itemsByCategory[item.category] = [];
     }
-    itemsByCategory[item.category].push(item)
-  })
+    itemsByCategory[item.category].push(item);
+  });
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -65,19 +112,33 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
         <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <Home className="h-5 w-5" />
-            <span className="text-lg font-semibold">Kuriftu Resort Management</span>
+            <span className="text-lg font-semibold">
+              Kuriftu Resort Management
+            </span>
           </Link>
           <nav className="ml-auto flex gap-4 sm:gap-6">
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Home
             </Link>
-            <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/dashboard"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Dashboard
             </Link>
-            <Link href="/inspections" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/inspections"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Inspections
             </Link>
-            <Link href="/checklists" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link
+              href="/checklists"
+              className="text-sm font-medium transition-colors hover:text-primary"
+            >
               Checklists
             </Link>
           </nav>
@@ -104,11 +165,16 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
               <CardContent className="space-y-6">
                 {Object.entries(itemsByCategory).map(([category, items]) => (
                   <div key={category} className="space-y-3">
-                    <h3 className="font-medium text-sm text-muted-foreground">{category}</h3>
+                    <h3 className="font-medium text-sm text-muted-foreground">
+                      {category}
+                    </h3>
                     <Separator />
                     <div className="space-y-2">
                       {items.map((item) => (
-                        <div key={item.id} className="flex items-start space-x-2">
+                        <div
+                          key={item.id}
+                          className="flex items-start space-x-2"
+                        >
                           <Checkbox
                             id={`item-${item.id}`}
                             checked={!!checkedItems[item.id]}
@@ -116,7 +182,11 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
                           />
                           <Label
                             htmlFor={`item-${item.id}`}
-                            className={`text-sm ${checkedItems[item.id] ? "line-through text-muted-foreground" : ""}`}
+                            className={`text-sm ${
+                              checkedItems[item.id]
+                                ? "line-through text-muted-foreground"
+                                : ""
+                            }`}
                           >
                             {item.text}
                           </Label>
@@ -156,9 +226,14 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
                     <div className="text-muted-foreground">Total Items:</div>
                     <div>{checklist.items.length}</div>
                     <div className="text-muted-foreground">Completed:</div>
-                    <div>{Object.values(checkedItems).filter(Boolean).length}</div>
+                    <div>
+                      {Object.values(checkedItems).filter(Boolean).length}
+                    </div>
                     <div className="text-muted-foreground">Remaining:</div>
-                    <div>{checklist.items.length - Object.values(checkedItems).filter(Boolean).length}</div>
+                    <div>
+                      {checklist.items.length -
+                        Object.values(checkedItems).filter(Boolean).length}
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -210,7 +285,9 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
             <Card className="mt-6">
               <CardHeader>
                 <CardTitle>Resource Constraints</CardTitle>
-                <CardDescription>Items flagged as missing or unavailable</CardDescription>
+                <CardDescription>
+                  Items flagged as missing or unavailable
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
@@ -234,7 +311,8 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
                   </div>
                 </div>
                 <div className="mt-4 text-xs text-muted-foreground">
-                  Note: Tasks requiring these resources will be marked as blocked until resources are available.
+                  Note: Tasks requiring these resources will be marked as
+                  blocked until resources are available.
                 </div>
               </CardContent>
             </Card>
@@ -242,5 +320,5 @@ export default function ChecklistDetailPage({ params }: { params: { id: string }
         </div>
       </main>
     </div>
-  )
+  );
 }
