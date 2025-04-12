@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, CheckCircle, ClipboardList, Settings } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import heroBackground from "../assets/hero_background.jpg"
+
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -19,21 +20,21 @@ export default function HomePage() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold text-white tracking-tighter sm:text-4xl md:text-5xl">
-                  Digitized Resort Inspection & Management
+                  Welcome to Kuriftu Resorts
                 </h1>
                 <p className="mx-auto text-white max-w-[700px] text-gray-500 md:text-xl">
-                  Simplify and standardize inspections across Kuriftu's resorts with our digital tool.
+                  Experience luxury and comfort at our world-class resort. Enjoy exceptional hospitality and breathtaking views.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="/inspections/new">
+                <Link href="guest/createIssues">
                   <Button className="bg-blue-800 text-white">
-                    Start New Inspection
+                    Report an Issue
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/dashboard">
-                  <Button variant="outline">View Dashboard</Button>
+                <Link href="guest/feedback">
+                  <Button variant="outline">Give Feedback</Button>
                 </Link>
               </div>
             </div>
@@ -41,70 +42,28 @@ export default function HomePage() {
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 justify-center mx-auto">
-            <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <Card>
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <ClipboardList className="h-8 w-8 text-primary" />
-                  <div className="grid gap-1">
-                    <CardTitle>Digital Checklists</CardTitle>
-                    <CardDescription>Mobile-friendly inspection tools</CardDescription>
-                  </div>
+                <CardHeader>
+                  <CardTitle>About Our Hotel</CardTitle>
+                  <CardDescription>Discover the Kuriftu Experience</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Create standardized checklists for housekeeping, maintenance, F&B, and more. Access them from any
-                    device.
+                    Kuriftu Resorts offers a unique blend of luxury and nature. From serene lakeside views to exquisite dining, we ensure your stay is unforgettable.
                   </p>
                 </CardContent>
-                <CardFooter>
-                  <Link href="/checklists">
-                    <Button variant="ghost" size="sm">
-                      View Checklists
-                    </Button>
-                  </Link>
-                </CardFooter>
               </Card>
               <Card>
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <CheckCircle className="h-8 w-8 text-primary" />
-                  <div className="grid gap-1">
-                    <CardTitle>Issue Tracking</CardTitle>
-                    <CardDescription>Report and resolve problems</CardDescription>
-                  </div>
+                <CardHeader>
+                  <CardTitle>Guest Services</CardTitle>
+                  <CardDescription>We're here to make your stay perfect</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Report issues with photos, assign tasks to departments, and track resolution status in real-time.
+                    Our dedicated team is available 24/7 to assist you with any needs. Let us know how we can enhance your experience.
                   </p>
                 </CardContent>
-                <CardFooter>
-                  <Link href="/issues">
-                    <Button variant="ghost" size="sm">
-                      View Issues
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card>
-                <CardHeader className="flex flex-row items-center gap-4">
-                  <Settings className="h-8 w-8 text-primary" />
-                  <div className="grid gap-1">
-                    <CardTitle>Analytics Dashboard</CardTitle>
-                    <CardDescription>Insights and performance tracking</CardDescription>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">
-                    Monitor recurring issues, track staff performance, and identify trends to improve operations.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Link href="/dashboard">
-                    <Button variant="ghost" size="sm">
-                      View Dashboard
-                    </Button>
-                  </Link>
-                </CardFooter>
               </Card>
             </div>
           </div>
