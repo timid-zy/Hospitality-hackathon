@@ -18,7 +18,7 @@ export default function InspectionsPage() {
             <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
               Home
             </Link>
-            <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
               Dashboard
             </Link>
             <Link href="/checklists" className="text-sm font-medium transition-colors hover:text-primary">
@@ -33,7 +33,7 @@ export default function InspectionsPage() {
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Inspections</h1>
-          <Link href="/inspections/new">
+          <Link href="">
             <Button>
               <Plus className="mr-2 h-4 w-4" /> New Inspection
             </Button>
@@ -73,7 +73,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: Maintenance</div>
-                <Link href="/inspections/1">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -98,7 +98,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: IT Support</div>
-                <Link href="/inspections/2">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -123,7 +123,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: Housekeeping</div>
-                <Link href="/inspections/3">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -148,7 +148,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: Maintenance</div>
-                <Link href="/inspections/4">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -174,7 +174,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: Maintenance</div>
-                <Link href="/inspections/1">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -200,7 +200,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: Maintenance</div>
-                <Link href="/inspections/4">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -226,7 +226,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: IT Support</div>
-                <Link href="/inspections/2">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -251,7 +251,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Assigned to: Housekeeping</div>
-                <Link href="/inspections/3">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -277,7 +277,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Priority: High</div>
-                <Link href="/inspections/1">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -302,7 +302,7 @@ export default function InspectionsPage() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">Priority: Medium</div>
-                <Link href="/inspections/4">
+                <Link href="">
                   <Button variant="ghost" size="sm">
                     View Details
                     <ArrowRight className="ml-2 h-4 w-4" />

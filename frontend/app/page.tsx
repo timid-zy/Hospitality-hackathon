@@ -44,7 +44,7 @@ export default function HomePage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/dashboard">
+                <Link href="/">
                   <Button variant="outline">View Dashboard</Button>
                 </Link>
               </div>
@@ -52,7 +52,7 @@ export default function HomePage() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="container px-4 md:px-6 justify-center mx-auto">
             <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
               <Card>
                 <CardHeader className="flex flex-row items-center gap-4">

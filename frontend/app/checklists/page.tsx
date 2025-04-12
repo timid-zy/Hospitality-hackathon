@@ -18,7 +18,7 @@ export default function ChecklistsPage() {
             <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
               Home
             </Link>
-            <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
               Dashboard
             </Link>
             <Link href="/inspections" className="text-sm font-medium transition-colors hover:text-primary">
