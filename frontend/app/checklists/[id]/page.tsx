@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -16,16 +16,12 @@ import { Label } from "../../../components/ui/label";
 import { Separator } from "../../../components/ui/separator";
 import { ArrowLeft, Home, Printer, Share } from "lucide-react";
 
-export default function ChecklistDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function ChecklistDetailPage() {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
   // Mock data - in a real app, this would come from an API
   const checklist = {
-    id: params.id,
+    id: 1,
     title: "Daily Room Inspection",
     department: "Housekeeping",
     description:
