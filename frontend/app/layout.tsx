@@ -49,7 +49,7 @@ export default function RootLayout({
                 <Link href="/inspections" className="text-sm font-medium transition-colors hover:text-primary">
                   Inspections
                 </Link>
-                <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
+                <Link href="/dashboard/managers" className="text-sm font-medium transition-colors hover:text-primary">
                   Dashboard
                 </Link>
                 <Link href="/checklists" className="text-sm font-medium transition-colors hover:text-primary">
