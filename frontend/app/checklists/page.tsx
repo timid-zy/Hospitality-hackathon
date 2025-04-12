@@ -8,28 +8,6 @@ import { ArrowRight, CheckCircle, Home, Plus, Search } from "lucide-react"
 export default function ChecklistsPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-b">
-        <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-2">
-            <Home className="h-5 w-5" />
-            <span className="text-lg font-semibold">Resourius</span>
-          </Link>
-          <nav className="ml-auto flex gap-4 sm:gap-6">
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
-              Home
-            </Link>
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
-              Dashboard
-            </Link>
-            <Link href="/inspections" className="text-sm font-medium transition-colors hover:text-primary">
-              Inspections
-            </Link>
-            <Link href="/staff" className="text-sm font-medium transition-colors hover:text-primary">
-              Staff
-            </Link>
-          </nav>
-        </div>
-      </header>
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Checklists</h1>

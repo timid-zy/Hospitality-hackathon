@@ -87,42 +87,6 @@ export default function StaffDetailPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="border-b">
-        <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-2">
-            <Home className="h-5 w-5" />
-            <span className="text-lg font-semibold">
-              Resourius
-            </span>
-          </Link>
-          <nav className="ml-auto flex gap-4 sm:gap-6">
-            <Link
-              href="/"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Home
-            </Link>
-            <Link
-              href="/dashboard"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/inspections"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Inspections
-            </Link>
-            <Link
-              href="/checklists"
-              className="text-sm font-medium transition-colors hover:text-primary"
-            >
-              Checklists
-            </Link>
-          </nav>
-        </div>
-      </header>
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center gap-4 mb-6">
           <Link href="/staff">
@@ -197,11 +161,10 @@ export default function StaffDetailPage() {
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star
                         key={star}
-                        className={`h-6 w-6 ${
-                          star <= Math.floor(staff.performance.rating)
+                        className={`h-6 w-6 ${star <= Math.floor(staff.performance.rating)
                             ? "fill-primary text-primary"
                             : "text-muted-foreground"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
@@ -275,13 +238,12 @@ export default function StaffDetailPage() {
                       </div>
                       <div className="flex items-center gap-2">
                         <div
-                          className={`text-xs px-2 py-1 rounded-full ${
-                            issue.status === "Completed"
+                          className={`text-xs px-2 py-1 rounded-full ${issue.status === "Completed"
                               ? "bg-green-100 text-green-800"
                               : issue.status === "In Progress"
-                              ? "bg-yellow-100 text-yellow-800"
-                              : "bg-gray-100 text-gray-800"
-                          }`}
+                                ? "bg-yellow-100 text-yellow-800"
+                                : "bg-gray-100 text-gray-800"
+                            }`}
                         >
                           {issue.status}
                         </div>
@@ -495,11 +457,10 @@ export default function StaffDetailPage() {
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
-                          className={`h-4 w-4 ${
-                            star <= 5
+                          className={`h-4 w-4 ${star <= 5
                               ? "fill-primary text-primary"
                               : "text-muted-foreground"
-                          }`}
+                            }`}
                         />
                       ))}
                     </div>
@@ -522,11 +483,10 @@ export default function StaffDetailPage() {
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
-                          className={`h-4 w-4 ${
-                            star <= 4
+                          className={`h-4 w-4 ${star <= 4
                               ? "fill-primary text-primary"
                               : "text-muted-foreground"
-                          }`}
+                            }`}
                         />
                       ))}
                     </div>
@@ -548,11 +508,10 @@ export default function StaffDetailPage() {
                       {[1, 2, 3, 4, 5].map((star) => (
                         <Star
                           key={star}
-                          className={`h-4 w-4 ${
-                            star <= 5
+                          className={`h-4 w-4 ${star <= 5
                               ? "fill-primary text-primary"
                               : "text-muted-foreground"
-                          }`}
+                            }`}
                         />
                       ))}
                     </div>
