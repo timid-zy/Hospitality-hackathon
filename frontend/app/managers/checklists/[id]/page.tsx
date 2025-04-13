@@ -106,7 +106,7 @@ export default function ChecklistDetailPage() {
     <div className="flex min-h-screen flex-col">
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center gap-4 mb-6">
-          <Link href="/checklists">
+          <Link href="/managers/checklists">
             <Button variant="outline" size="sm">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Checklists
@@ -142,10 +142,11 @@ export default function ChecklistDetailPage() {
                           />
                           <Label
                             htmlFor={`item-${item.id}`}
-                            className={`text-sm ${checkedItems[item.id]
+                            className={`text-sm ${
+                              checkedItems[item.id]
                                 ? "line-through text-muted-foreground"
                                 : ""
-                              }`}
+                            }`}
                           >
                             {item.text}
                           </Label>

@@ -1,9 +1,21 @@
-import Link from "next/link"
-import { Button } from "../../../components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../../components/ui/card"
-import { Input } from "../../../components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../components/ui/tabs"
-import { ArrowRight, CheckCircle, Home, Plus, Search } from "lucide-react"
+import Link from "next/link";
+import { Button } from "../../../components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../../components/ui/card";
+import { Input } from "../../../components/ui/input";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../../../components/ui/tabs";
+import { ArrowRight, CheckCircle, Home, Plus, Search } from "lucide-react";
 
 export default function ChecklistsPage() {
   return (
@@ -11,7 +23,7 @@ export default function ChecklistsPage() {
       <main className="flex-1 p-4 md:p-6">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Checklists</h1>
-          <Link href="/checklists/new">
+          <Link href="/managers/checklists/new">
             <Button>
               <Plus className="mr-2 h-4 w-4" /> New Checklist
             </Button>
@@ -21,7 +33,11 @@ export default function ChecklistsPage() {
         <div className="flex items-center gap-4 mb-6">
           <div className="relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input type="search" placeholder="Search checklists..." className="w-full bg-background pl-8" />
+            <Input
+              type="search"
+              placeholder="Search checklists..."
+              className="w-full bg-background pl-8"
+            />
           </div>
           <Button variant="outline">Filter</Button>
         </div>
@@ -45,13 +61,13 @@ export default function ChecklistsPage() {
                   <span>Active</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Standard checklist for daily room inspections including bed making, bathroom cleaning, and amenity
-                  restocking.
+                  Standard checklist for daily room inspections including bed
+                  making, bathroom cleaning, and amenity restocking.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">15 items</div>
-                <Link href="/checklists/1">
+                <Link href="/managers/checklists/new">
                   <Button variant="ghost" size="sm">
                     View Checklist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -71,12 +87,13 @@ export default function ChecklistsPage() {
                   <span>Active</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Comprehensive checklist for weekly maintenance inspections of all rooms and common areas.
+                  Comprehensive checklist for weekly maintenance inspections of
+                  all rooms and common areas.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">22 items</div>
-                <Link href="/checklists/2">
+                <Link href="/managers/checklists/new">
                   <Button variant="ghost" size="sm">
                     View Checklist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -96,12 +113,13 @@ export default function ChecklistsPage() {
                   <span>Active</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Detailed checklist for monthly inspection of all HVAC systems throughout the resort.
+                  Detailed checklist for monthly inspection of all HVAC systems
+                  throughout the resort.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">18 items</div>
-                <Link href="/checklists/3">
+                <Link href="/managers/checklists/new">
                   <Button variant="ghost" size="sm">
                     View Checklist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -121,12 +139,13 @@ export default function ChecklistsPage() {
                   <span>Active</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Final inspection checklist to be completed before guest arrival to ensure room readiness.
+                  Final inspection checklist to be completed before guest
+                  arrival to ensure room readiness.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">12 items</div>
-                <Link href="/checklists/4">
+                <Link href="/managers/checklists/new">
                   <Button variant="ghost" size="sm">
                     View Checklist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -148,13 +167,13 @@ export default function ChecklistsPage() {
                   <span>Active</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Standard checklist for daily room inspections including bed making, bathroom cleaning, and amenity
-                  restocking.
+                  Standard checklist for daily room inspections including bed
+                  making, bathroom cleaning, and amenity restocking.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">15 items</div>
-                <Link href="/checklists/1">
+                <Link href="/managers/checklists/new">
                   <Button variant="ghost" size="sm">
                     View Checklist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -176,12 +195,13 @@ export default function ChecklistsPage() {
                   <span>Active</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Comprehensive checklist for weekly maintenance inspections of all rooms and common areas.
+                  Comprehensive checklist for weekly maintenance inspections of
+                  all rooms and common areas.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">22 items</div>
-                <Link href="/checklists/2">
+                <Link href="/managers/checklists/new">
                   <Button variant="ghost" size="sm">
                     View Checklist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -203,12 +223,13 @@ export default function ChecklistsPage() {
                   <span>Active</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Detailed checklist for monthly inspection of all HVAC systems throughout the resort.
+                  Detailed checklist for monthly inspection of all HVAC systems
+                  throughout the resort.
                 </p>
               </CardContent>
               <CardFooter className="flex justify-between">
                 <div className="text-sm text-muted-foreground">18 items</div>
-                <Link href="/checklists/3">
+                <Link href="/managers/checklists/new">
                   <Button variant="ghost" size="sm">
                     View Checklist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -220,5 +241,5 @@ export default function ChecklistsPage() {
         </Tabs>
       </main>
     </div>
-  )
+  );
 }
