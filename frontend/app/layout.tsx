@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { InspectionsProvider } from "../context/InspectionsContext";
 import Link from "next/link";
-import image from './assets/kuriftu.jpg'
+import image from "./assets/kuriftu.jpg";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,28 +34,52 @@ export default function RootLayout({
         <InspectionsProvider>
           {/* Shared Header */}
           <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
-
             <div className="container flex h-16 items-center px-4 sm:px-6 lg:px-8">
               <Link href="/" className="flex items-center gap-2">
-                <img src={image.src} alt="Kuriftu Logo" className="h-8 w-8 rounded-full" />
+                <img
+                  src={image.src}
+                  alt="Kuriftu Logo"
+                  className="h-8 w-8 rounded-full"
+                />
                 {/* <Home className="h-8 w-8 text-primary" /> */}
                 {/* <span className="text-lg font-semibold">Resourius</span> */}
                 <span className="text-lg font-semibold">Resourius</span>
               </Link>
               <nav className="ml-auto flex gap-4 sm:gap-6">
-                <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
+                <Link
+                  href="/"
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
                   Home
                 </Link>
-                <Link href="/managers/issues" className="text-sm font-medium transition-colors hover:text-primary">
+                <Link
+                  href="/managers/issues"
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
                   Issues
                 </Link>
-                <Link href="/managers/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
+                <Link
+                  href="/managers/dashboard"
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
                   Dashboard
                 </Link>
-                <Link href="/managers/checklists" className="text-sm font-medium transition-colors hover:text-primary">
+                <Link
+                  href="/managers/checklists"
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
                   Checklists
                 </Link>
-                <Link href="/managers/staff" className="text-sm font-medium transition-colors hover:text-primary">
+                <Link
+                  href="/managers/staff"
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
+                  Manager
+                </Link>
+                <Link
+                  href="/staff"
+                  className="text-sm font-medium transition-colors hover:text-primary"
+                >
                   Staff
                 </Link>
               </nav>
